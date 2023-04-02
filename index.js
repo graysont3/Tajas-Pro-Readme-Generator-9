@@ -25,7 +25,37 @@ const questions = [
     {
         message: "What is a short description of your project?",
         name: "shortDescription"
-    }
+    },
+    {
+        type: "list",
+        message: "Is there a license for this?",
+        name: "appLicense",
+        choices: ['ISC', 'MIT', 'Mozilla','No license'],
+    },  
+    {
+        message: "How do you install this app?",
+        name: "appInstallation"
+    },   
+    {
+        message: "What is this app used for?",
+        name: "appUsage"
+    },   
+    {
+        message: "How did you contribute to this app?",
+        name: "appContribution"
+    },   
+    {
+        message: "What are the test intructions for this app?",
+        name: "appInstructions"
+    },   
+    {
+        message: "Questions about the app?",
+        name: "appQuestions"
+    },   
+
+
+
+
 
 
 ];
@@ -43,7 +73,8 @@ function init() {
     inquirer.prompt(questions)
     .then(answers => {
         console.log(answers)
-        const template= `# Title of my README
+        const template= `
+    # ${answers.projectTitle}
 
 ## Description
 
