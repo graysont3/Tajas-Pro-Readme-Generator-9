@@ -74,11 +74,33 @@ function init() {
     .then(answers => {
         console.log(answers)
         const template= `
-    # ${answers.projectTitle}
 
-## Description
+    ## ${answers.projectTitle}
 
-My dog's name is ${answers.dogName} and he is a great dog.`
+    ## Description
+
+    A brief explanation of my project is ${answers.shortDescription}. 
+    
+    ## Installation
+    
+    The app is installed by ${answers.appInstallation}.
+
+    ## Usage
+
+    The app is used ${answers.appUsage}. 
+
+    ## License
+
+    The app has the following license ${answers.appLicense}.
+
+    ## Contribution
+
+    I contributed to the app by ${answers.appContribution}.
+
+    ## Tests
+
+    These are the test instructions ${answers.appInstructions}.
+`
 
         writeToFile("sampleReadme.md", template)
     })
